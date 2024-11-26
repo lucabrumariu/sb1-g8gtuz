@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://padinaursului.ro/sitemap.xml
+
+# Disallow
+Disallow: /multumim
+Disallow: /404

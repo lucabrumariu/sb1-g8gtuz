@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply text-gray-900 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Optimize font loading */
+  @font-face {
+    font-family: 'serif';
+    font-display: swap;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2 rounded-md transition-all duration-300 touch-manipulation;
+  }
+  
+  .btn-primary {
+    @apply bg-amber-800 text-white hover:bg-amber-900 active:bg-amber-950 rounded-md;
+  }
+  
+  .hero-text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Mobile-optimized touch targets */
+  .mobile-touch-target {
+    @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
+  }
+
+  /* Optimize image loading */
+  .lazy-image {
+    @apply opacity-0 transition-opacity duration-300;
+  }
+
+  .lazy-image.loaded {
+    @apply opacity-100;
+  }
+
+  /* Mobile menu optimizations */
+  .mobile-menu-item {
+    @apply py-3 px-4 w-full text-left hover:bg-amber-50 transition-colors;
+  }
+
+  /* Improved mobile scrolling */
+  .smooth-scroll {
+    @apply scroll-smooth overscroll-none;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
